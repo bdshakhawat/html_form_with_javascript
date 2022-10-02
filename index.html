@@ -14,6 +14,15 @@
         h1{
             color: blue;
         }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: 0 auto;
+        }
+        form input{
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body >
@@ -24,21 +33,41 @@
         Then we can use the setAttribute method to set the element attributes.
 
         Then we can use the appendChild method to append the elements into the parent element.Finally append the <form> element to the <body> element of the document. This example creates a Registration form.
+
+        ** make it a reusable function
+        ** the function will accept 2 parameter
+            1. number ( the number of input element)
+            2. an object will be passed with element properties, like🧮 
+            let elemObj = [
+                {
+                    "type": "text/email/password",
+                    "name": "dummy_text",
+                    "placeholder": "dummy_placeholder"
+                },
+                {
+                    "type": "text/email/password",
+                    "name": "dummy_text",
+                    "placeholder": "dummy_placeholder"
+                }
+            ]
+        
+        ** testFunction(3, elemObj)
+        ** 
     -->
    
 <script>
             //  Creating the Form Field
                 const f = document.createElement("form");
-                    f.setAttribute('method', "post");
-                    f.setAttribute('action', "submit.php");
+                f.setAttribute('method', "post");
+                f.setAttribute('action', "submit.php");
 
                 const i = document.createElement("input");
-                    i.setAttribute("type", "text");
-                    i.setAttribute("name", "FullName");
-                    i.setAttribute("placeholder", "Full Name");
+                i.setAttribute("type", "text");
+                i.setAttribute("name", "FullName");
+                i.setAttribute("placeholder", "Full Name");
 
                 // // Create a break line element
-                var br = document.createElement("br");
+                // var br = document.createElement("br");
 
                 // // Creating email input field
                 const e = document.createElement("input");  
@@ -67,25 +96,19 @@
                 // // Adding the Full name fields inside the Form element
                 
                 f.appendChild(i);
+
                 // Inserting a line break
-                f.appendChild(br.cloneNode());
-                f.appendChild(br.cloneNode());
+                
                 // Adding the Email ID field
                 f.appendChild(e);
-                f.appendChild(br.cloneNode());
-                f.appendChild(br.cloneNode());
                 f.appendChild(s);
 
                 // Adding Date of birth field
                 f.appendChild(db);
-                f.appendChild(br.cloneNode());
-                f.appendChild(br.cloneNode());
                 f.appendChild(s);
 
                 // Adding password field
                 f.appendChild(pw);
-                f.appendChild(br.cloneNode());
-                f.appendChild(br.cloneNode());
                 f.appendChild(s);
                 
                 
