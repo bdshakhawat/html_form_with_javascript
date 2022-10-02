@@ -8,13 +8,16 @@
     <style>
         body{
             text-align: center;
+            
         }
+        
         h1{
             color: blue;
         }
     </style>
 </head>
 <body >
+    <h1>HTML Form with javascript</h1>
     <!-- 
         To create a form dynamically with JavaScript, we can use the document.createElement method to create the element.
 
@@ -115,37 +118,142 @@ FN.setAttribute("placeholder", "Full Name");
     <!-- creating a Form -->
 
 <script>
-    // creating the Form element
-        const f = document.createElement("form");
-        f.setAttribute('method', "post");
-        f.setAttribute('action', "submit.php");
-        
-        // creating text input field
+                // creating the Form element
+                    
+                    
+                   
+                    // // Create an input element for Full Name
+                    // var fn = document.createElement("input");
+                    // fn.setAttribute("type", "text");
+                    // fn.setAttribute("name", "FullName");
+                    // fn.setAttribute("placeholder", "Full Name");
 
-        const i = document.createElement("input");
-        i.setAttribute('type', "text");
-        i.setAttribute('name', "username");
+                    // // Create an input element for date of birth
+                    // var dob = document.createElement("input");
+                    // dob.setAttribute("type", "text");
+                    // dob.setAttribute("name", "dob");
+                    // dob.setAttribute("placeholder", "dob");
 
-        // Creating email input field
-        const e = document.createElement("input");  
-        e.setAttribute('type', "email");
-        e.setAttribute('value', "email"); 
+                    // // Create an input element for emailID
+                    // var eid = document.createElement("input");
+                    // eid.setAttribute("type", "text");
+                    // eid.setAttribute("name", "emailID");
+                    // eid.setAttribute("placeholder", "E-Mail ID");
 
-        // creating submit input field
-        const s = document.createElement("input");
-        s.setAttribute('type', "submit");
-        s.setAttribute('value', "Submit");
-          
-        
-        // Adding the iput fields inside the Form element
-        
-        f.appendChild(i);
-        f.appendChild(s);
-        f.appendChild(e);
-        
-        
-        // Inserting the form element inside the HTML body
-        document.body.appendChild(f); 
+                    // // Create an input element for password
+                    // var pw = document.createElement("input");
+                    // pw.setAttribute("type", "password");
+                    // pw.setAttribute("name", "password");
+                    // pw.setAttribute("placeholder", "Password");
+
+                    // // Create an input element for retype-password
+                    // var rpw = document.createElement("input");
+                    // rpw.setAttribute("type", "password");
+                    // rpw.setAttribute("name", "reTypePassword");
+                    // rpw.setAttribute("placeholder", "ReEnter Password");
+
+                    // // create a submit button
+                    // var sb = document.createElement("input");
+                    // sb.setAttribute("type", "submit");
+                    // sb.setAttribute("value", "Submit");
+                    
+                    // // Append the full name input to the form
+                    // f.appendChild(fn);
+                    
+                    // // Inserting a line break
+                    // f.appendChild(br.cloneNode());
+                    
+                    // // Append the DOB to the form
+                    // f.appendChild(dob);
+                    // f.appendChild(br.cloneNode());
+                    
+                    // // Append the emailID to the form
+                    // f.appendChild(eid);
+                    // f.appendChild(br.cloneNode());
+                    
+                    // // Append the Password to the form
+                    // f.appendChild(pw);
+                    // f.appendChild(br.cloneNode());
+                    
+                    // // Append the ReEnterPassword to the form
+                    // f.appendChild(rpw);
+                    // f.appendChild(br.cloneNode());
+                    
+                    // // Append the submit button to the form
+                    // f.appendChild(sb);
+
+                    // document.getElementsByTagName("body")[0]
+                    // .appendChild(f);
+
+                // const i = document.createElement("input");
+                // i.setAttribute('type', "text");
+                // i.setAttribute('name', "username");
+
+
+                const f = document.createElement("form");
+                    f.setAttribute('method', "post");
+                    f.setAttribute('action', "submit.php");
+
+                const i = document.createElement("input");
+                    i.setAttribute("type", "text");
+                    i.setAttribute("name", "FullName");
+                    i.setAttribute("placeholder", "Full Name");
+
+                // // Create a break line element
+                var br = document.createElement("br");
+
+                // // Creating email input field
+                const e = document.createElement("input");  
+                e.setAttribute('type', "email");
+                e.setAttribute('value', "Email ID");
+                e.setAttribute("placeholder","Email ID"); 
+
+                // // creating submit input field
+                const s = document.createElement("input");
+                s.setAttribute('type', "submit");
+                s.setAttribute('value', "Submit");
+
+                // Creating Date of Birth field
+                const db = document.createElement("input");
+                db.setAttribute("type","text");
+                db.setAttribute("value","Date of Birth");
+                db.setAttribute("placeholder", "Date of birth");
+
+                // Creating Password field
+                const pw = document.createElement("input");
+                pw.setAttribute("type", "password");
+                pw.setAttribute("value", "Your Password");
+                pw.setAttribute("placeholder","Password");
+                
+                
+                // // Adding the Full name fields inside the Form element
+                
+                f.appendChild(i);
+                // Inserting a line break
+                f.appendChild(br.cloneNode());
+                f.appendChild(br.cloneNode());
+                // Adding the Email ID field
+                f.appendChild(e);
+                f.appendChild(br.cloneNode());
+                f.appendChild(br.cloneNode());
+                f.appendChild(s);
+
+                // Adding Date of birth field
+                f.appendChild(db);
+                f.appendChild(br.cloneNode());
+                f.appendChild(br.cloneNode());
+                f.appendChild(s);
+
+                // Adding password field
+                f.appendChild(pw);
+                f.appendChild(br.cloneNode());
+                f.appendChild(br.cloneNode());
+                f.appendChild(s);
+                
+                
+                
+                // // Inserting the form element inside the HTML body
+                document.body.appendChild(f); 
 
         
         
