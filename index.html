@@ -37,7 +37,7 @@
         ** make it a reusable function
         ** the function will accept 2 parameter
             1. number ( the number of input element)
-            2. an object will be passed with element properties, like🧮 
+            2. an object will be passed with element properties, like 
             let elemObj = [
                 {
                     "type": "text/email/password",
@@ -53,73 +53,166 @@
         
         ** testFunction(3, elemObj)
         ** 
+
+        // For this write a function named 
+
+
+
+      let  input = array["text", "email","password"] Value validation of type property
+      validation: out of these three types give alert ("input is not allowed")
+      let inputProperty=["type","value","placeholder"]
+      if these three property are not given then alert("Not accepted");
     -->
-   
-<script>
-            //  Creating the Form Field
+    <script>
+            // // Create a break line element
+            // var br = document.createElement("br");
+            let elemObj=[
+                {
+                    'type' : "text",
+                    'value':"dummy_text",
+                    'placeholder':"Your Full Name"
+
+                },
+                {
+                    'type':"email",
+                    'value':"email",
+                    'placeholder':"Put your Email Here"
+                },
+                {
+                    'type':"text",
+                    'value':"Date of Birth",
+                    'placeholder':"Write your deate of birth"
+
+                },
+                {
+                    'type':"password",
+                    'value':"password",
+                    'placeholder':"password"
+                    
+
+                }
+            ]
+            function submitForm(number, elemObj){
+                let numbers = elemObj.length;
+                if (number != numbers){
+                    alert("Numbers are not matching with number");
+                }
                 const f = document.createElement("form");
-                f.setAttribute('method', "post");
-                f.setAttribute('action', "submit.php");
+                    f.setAttribute('method', "post");
+                    f.setAttribute('action', "submit.php"); 
+                // let y = document.createElement("input");
+                for(let x=0; x<elemObj.length; x++){
+                    //  var elem= elemObj[x];
+                    //  console.log(elem);
+                    let i = document.createElement("input");
+                    // i=y;
+                    i.setAttribute("type", elemObj[x]["type"]);
+                    i.setAttribute("value", elemObj[x]["value"]);
+                    i.setAttribute("placeholder", elemObj[x]["placeholder"]);
 
-                const i = document.createElement("input");
-                i.setAttribute("type", "text");
-                i.setAttribute("name", "FullName");
-                i.setAttribute("placeholder", "Full Name");
-
-                // // Create a break line element
-                // var br = document.createElement("br");
-
-                // // Creating email input field
-                const e = document.createElement("input");  
-                e.setAttribute('type', "email");
-                e.setAttribute('value', "Email ID");
-                e.setAttribute("placeholder","Email ID"); 
-
-                // // creating submit input field
+                    
+                    // return elem;
+                    f.appendChild(i);
+                    // i=null;
+                }
                 const s = document.createElement("input");
-                s.setAttribute('type', "submit");
-                s.setAttribute('value', "Submit");
-
-                // Creating Date of Birth field
-                const db = document.createElement("input");
-                db.setAttribute("type","text");
-                db.setAttribute("value","Date of Birth");
-                db.setAttribute("placeholder", "Date of birth");
-
-                // Creating Password field
-                const pw = document.createElement("input");
-                pw.setAttribute("type", "password");
-                pw.setAttribute("value", "Your Password");
-                pw.setAttribute("placeholder","Password");
-                
-                
-                // // Adding the Full name fields inside the Form element
-                
-                f.appendChild(i);
-
-                // Inserting a line break
-                
-                // Adding the Email ID field
-                f.appendChild(e);
-                f.appendChild(s);
-
-                // Adding Date of birth field
-                f.appendChild(db);
-                f.appendChild(s);
-
-                // Adding password field
-                f.appendChild(pw);
+                    s.setAttribute('type', "submit");
+                    s.setAttribute('value', "Submit");
                 f.appendChild(s);
                 
-                
-                
-                // // Inserting the form element inside the HTML body
-                document.body.appendChild(f); 
+                document.body.appendChild(f);
 
-        
-        
-        
+                // console.log(elemObj);
+                // console.log(numbers);
+                // console.log(number);
+                //  Creating the Form Field
+                    // const f = document.createElement("form");
+                    // f.setAttribute('method', "post");
+                    // f.setAttribute('action', "submit.php");
+
+                    // const i = document.createElement("input");
+                    // i.setAttribute("type", "text");
+                    // i.setAttribute("name", "FullName");
+                    // i.setAttribute("placeholder", "Full Name");
+
+                    
+
+                    // // Creating email input field
+                    // const e = document.createElement("input");  
+                    // e.setAttribute('type', "email");
+                    // e.setAttribute('value', "Email ID");
+                    // e.setAttribute("placeholder","Email ID"); 
+
+                    // // creating submit input field
+                    // const s = document.createElement("input");
+                    // s.setAttribute('type', "submit");
+                    // s.setAttribute('value', "Submit");
+
+                    // Creating Date of Birth field
+                    // const db = document.createElement("input");
+                    // db.setAttribute("type","text");
+                    // db.setAttribute("value","Date of Birth");
+                    // db.setAttribute("placeholder", "Date of birth");
+
+                    // Creating Password field
+                    // const pw = document.createElement("input");
+                    // pw.setAttribute("type", "password");
+                    // pw.setAttribute("value", "Your Password");
+                    // pw.setAttribute("placeholder","Password");
+                    
+                    
+                    // // Adding the Full name fields inside the Form element
+                    
+                    // f.appendChild(i);
+
+                    // Inserting a line break
+                    
+                    // Adding the Email ID field
+                    // f.appendChild(e);
+                    // f.appendChild(s);
+
+                    // Adding Date of birth field
+                    // f.appendChild(db);
+                    // f.appendChild(s);
+
+                    // Adding password field
+                    // f.appendChild(pw);
+                    // f.appendChild(s);
+                    
+                    
+                    
+                    // // Inserting the form element inside the HTML body
+                    // document.body.appendChild(f); 
+
+            }
+            
+            submitForm(4,elemObj);
+
+   
+            
+
+
+
+
 </script>
+
+
+    <!-- // function funcChain(x) {
+    //     console.log(x)
+    //     console.log(this)
+    //     return this.funcChain
+    // }
+    // funcChain(5)(10)(15);
+
+    // let testObj = {
+    //     name: "Js",
+    //     reF: function(){
+    //         console.log(this)
+    //     } 
+    // } -->
+
+
+         
 
 
 
