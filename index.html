@@ -88,23 +88,44 @@
 
                 },
                 {
-                    'type':"password",
+                    'type':"range",
                     'value':"password",
                     'placeholder':"password"
                     
 
                 }
             ]
+
+            function typeValidation(inputType) {
+                console.log("Function got input type: ",inputType)
+                let allowedTypeList = ["text", "email","password"]
+                let typeValidated = false;
+
+                // logic
+                if (allowedTypeList.includes(inputType.toLowerCase())) {
+                    typeValidated = true;
+                }
+
+                return typeValidated            
+            }
+
             function submitForm(number, elemObj){
                 let numbers = elemObj.length;
                 if (number != numbers){
                     alert("Numbers are not matching with number");
                 }
+                
                 const f = document.createElement("form");
                     f.setAttribute('method', "post");
                     f.setAttribute('action', "submit.php"); 
                 // let y = document.createElement("input");
                 for(let x=0; x<elemObj.length; x++){
+                    let typeValidated = typeValidation(elemObj[x]["type"])
+
+                    if (!typeValidated){
+                        alert("Field type not allowed!")
+                        return;
+                    }
                     //  var elem= elemObj[x];
                     //  console.log(elem);
                     let i = document.createElement("input");
@@ -117,7 +138,19 @@
                     // return elem;
                     f.appendChild(i);
                     // i=null;
+                    
+                    
+                    // Type value validation Start
+                    // let y = elemObj[x]["type"];
+                    // console.log("y", y)
+
+                    // if(y = elemObj[x]["type"]){
+                    //     alert("Input correct data type");
+                    // }
+                    // Type value validation Ends
+                
                 }
+
                 const s = document.createElement("input");
                     s.setAttribute('type', "submit");
                     s.setAttribute('value', "Submit");
@@ -125,95 +158,17 @@
                 
                 document.body.appendChild(f);
 
-                // console.log(elemObj);
-                // console.log(numbers);
-                // console.log(number);
-                //  Creating the Form Field
-                    // const f = document.createElement("form");
-                    // f.setAttribute('method', "post");
-                    // f.setAttribute('action', "submit.php");
-
-                    // const i = document.createElement("input");
-                    // i.setAttribute("type", "text");
-                    // i.setAttribute("name", "FullName");
-                    // i.setAttribute("placeholder", "Full Name");
-
-                    
-
-                    // // Creating email input field
-                    // const e = document.createElement("input");  
-                    // e.setAttribute('type', "email");
-                    // e.setAttribute('value', "Email ID");
-                    // e.setAttribute("placeholder","Email ID"); 
-
-                    // // creating submit input field
-                    // const s = document.createElement("input");
-                    // s.setAttribute('type', "submit");
-                    // s.setAttribute('value', "Submit");
-
-                    // Creating Date of Birth field
-                    // const db = document.createElement("input");
-                    // db.setAttribute("type","text");
-                    // db.setAttribute("value","Date of Birth");
-                    // db.setAttribute("placeholder", "Date of birth");
-
-                    // Creating Password field
-                    // const pw = document.createElement("input");
-                    // pw.setAttribute("type", "password");
-                    // pw.setAttribute("value", "Your Password");
-                    // pw.setAttribute("placeholder","Password");
-                    
-                    
-                    // // Adding the Full name fields inside the Form element
-                    
-                    // f.appendChild(i);
-
-                    // Inserting a line break
-                    
-                    // Adding the Email ID field
-                    // f.appendChild(e);
-                    // f.appendChild(s);
-
-                    // Adding Date of birth field
-                    // f.appendChild(db);
-                    // f.appendChild(s);
-
-                    // Adding password field
-                    // f.appendChild(pw);
-                    // f.appendChild(s);
-                    
-                    
-                    
-                    // // Inserting the form element inside the HTML body
-                    // document.body.appendChild(f); 
-
+                
             }
             
             submitForm(4,elemObj);
 
    
-            
-
-
-
 
 </script>
 
 
-    <!-- // function funcChain(x) {
-    //     console.log(x)
-    //     console.log(this)
-    //     return this.funcChain
-    // }
-    // funcChain(5)(10)(15);
-
-    // let testObj = {
-    //     name: "Js",
-    //     reF: function(){
-    //         console.log(this)
-    //     } 
-    // } -->
-
+   
 
          
 
