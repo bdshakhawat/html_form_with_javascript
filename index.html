@@ -70,54 +70,57 @@
       the input. (Before running the loop) (improved Type validation )
       *** Property or Key Validation
     -->
+    <script src="./helperFunc.js"></script>
     <script>
             // // Create a break line element
             // var br = document.createElement("br");
             let elemObj=[
                 {
-                    'type':"text",
-                    'value':"name",
-                    'placeholder':"Put your Full Name Here"
+                    type:"text",
+                    value:"name",
+                    placeholder:"Put your Full Name Here"
                 },
                 
                 {
-                    'type':"email",
-                    'value':"email",
-                    'placeholder':"Put your Email Here"
+                    type:"email",
+                    value:"email",
+                    placeholder:"Put your Email Here"
                 },
                 {
-                    'type':"text",
-                    'value':"Date of Birth",
-                    'placeholder':"Write your date of birth"
+                    type:"text",
+                    value:"Date of Birth",
+                    placeholder:"Write your date of birth"
 
                 },
                 {
-                    'type':"password",
-                    'value':"password",
-                    'placeholder':"password"
+                    type:"password",
+                    value:"password",
+                    placeholder:"password"
                     
 
                 }
             ]
+            // console.log(elemObj.type);
 
-            function typeValidation(inputType) {
-                console.log("Function got input type: ",inputType)
-                let allowedTypeList = ["text", "email","password"]
-                let typeValidated = false;
+            // Advanced validation function
+            // function improvedValidation(userInput){
+            //     console.log(elemObj[type]);
 
-                // logic
-                if (allowedTypeList.includes(inputType.toLowerCase())) {
-                    typeValidated = true;
-                }
-
-                return typeValidated            
-            }
+            // }
+            // improvedValidation(...elemObj);
 
             function submitForm(number, elemObj){
+
+                // get the length of the object
                 let numbers = elemObj.length;
+                // check the input is a number or not
                 if (number != numbers){
                     alert("Numbers are not matching with number");
                 }
+
+                // property validation
+                propertyValidation(elemObj)
+                return;
                 
                 const f = document.createElement("form");
                     f.setAttribute('method', "post");
@@ -167,9 +170,14 @@
             
             submitForm(4,elemObj);
 
+
+
    
 
 </script>
+
+
+
 
 
    
