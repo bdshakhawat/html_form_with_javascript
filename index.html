@@ -77,13 +77,13 @@
             let elemObj=[
                 {
                     type:"text",
-                    value:"name",
+                    value:"Full Name",
                     placeholder:"Put your Full Name Here"
                 },
                 
                 {
                     type:"email",
-                    value:"email",
+                    value:"Email",
                     placeholder:"Put your Email Here"
                 },
                 {
@@ -113,14 +113,17 @@
 
                 // get the length of the object
                 let numbers = elemObj.length;
-                // check the input is a number or not
+                // check the number input 
                 if (number != numbers){
                     alert("Numbers are not matching with number");
                 }
 
                 // property validation
-                propertyValidation(elemObj)
-                return;
+                // propertyValidation(elemObj)
+                // return;
+                
+                
+                // Form creation with javascript insetad of HTML Starts
                 
                 const f = document.createElement("form");
                     f.setAttribute('method', "post");
