@@ -70,114 +70,125 @@
       the input. (Before running the loop) (improved Type validation )
       *** Property or Key Validation
     -->
-    <script src="./helperFunc.js"></script>
+    <scrip src="./helperFunc.js"></script>
+    
+
     <script>
-            // // Create a break line element
-            // var br = document.createElement("br");
-            let elemObj=[
-                {
-                    type:"text",
-                    value:"Full Name",
-                    placeholder:"Put your Full Name Here"
-                },
-                
-                {
-                    type:"email",
-                    value:"Email",
-                    placeholder:"Put your Email Here"
-                },
-                {
-                    type:"text",
-                    value:"Date of Birth",
-                    placeholder:"Write your date of birth"
+        
 
-                },
-                {
-                    type:"password",
-                    value:"password",
-                    placeholder:"password"
-                    
+        // helper function for input validation.
+        function typeValidation(inputType) {
+            // console.log("Function got input type: ",inputType)
+            // Standard list for comparison
+            let allowedTypeList = ["text", "email","password"]
+            // Set default value as false
 
-                }
-            ]
-            // console.log(elemObj.type);
+            let typeValidated = false;
 
-            // Advanced validation function
-            // function improvedValidation(userInput){
-            //     console.log(elemObj[type]);
-
-            // }
-            // improvedValidation(...elemObj);
-
-            function submitForm(number, elemObj){
-
-                // get the length of the object
-                let numbers = elemObj.length;
-                // check the number input 
-                if (number != numbers){
-                    alert("Numbers are not matching with number");
-                }
-
-                // property validation
-                // propertyValidation(elemObj)
-                // return;
-                
-                
-                // Form creation with javascript insetad of HTML Starts
-                
-                const f = document.createElement("form");
-                    f.setAttribute('method', "post");
-                    f.setAttribute('action', "submit.php"); 
-                // let y = document.createElement("input");
-                for(let x=0; x<elemObj.length; x++){
-                    let typeValidated = typeValidation(elemObj[x]["type"])
-
-                    if (!typeValidated){
-                        alert("Field type not allowed!")
-                        return;
-                    }
-                    //  var elem= elemObj[x];
-                    //  console.log(elem);
-                    let i = document.createElement("input");
-                    // i=y;
-                    i.setAttribute("type", elemObj[x]["type"]);
-                    i.setAttribute("value", elemObj[x]["value"]);
-                    i.setAttribute("placeholder", elemObj[x]["placeholder"]);
-
-                    
-                    // return elem;
-                    f.appendChild(i);
-                    // i=null;
-                    
-                    
-                    // Type value validation Start
-                    // let y = elemObj[x]["type"];
-                    // console.log("y", y)
-
-                    // if(y = elemObj[x]["type"]){
-                    //     alert("Input correct data type");
-                    // }
-                    // Type value validation Ends
-                
-                }
-
-                const s = document.createElement("input");
-                    s.setAttribute('type', "submit");
-                    s.setAttribute('value', "Submit");
-                f.appendChild(s);
-                
-                document.body.appendChild(f);
-
-                
+            // logic to compare with user input for validation
+            if (allowedTypeList.includes(inputType.toLowerCase())) {
+                typeValidated = true;
             }
+            return typeValidated;            
+        }
+
+
+
+        function validationProperty(propertyObject){
+            let allowedPropertyList=["type","value","placeholder"],
+                propertyValidated = false;
+
+            // passedPropertylist = Object.keys(propertyObject);
+            // console.log(passedPropertylist)
+
+            propertyObject.forEach(elements => {
+                propertyValidated = allowedPropertyList.includes(elements)
+            })
+            return propertyValidated
+        }
+
+
+        let elemObj=[
+            {
+                type:"text",
+                value:"Full Name",
+                placeholder:"Put your Full Name Here"
+            },
             
-            submitForm(4,elemObj);
+            {
+                type:"email",
+                value:"Email",
+                placeholder:"Put your Email Here"
+            },
+            {
+                type:"text",
+                value:"Date of Birth",
+                placeholder:"Write your date of birth"
+            },
+            {
+                type:"password",
+                value:"password",
+                placeholder:"password"
+                
+
+            }
+        ]
+
+        function submitForm(number, elemObj){
+
+            // get the length of the object
+            let numbers = elemObj.length;
+            // check the number input 
+            if (number != numbers){
+                alert("Numbers are not matching with number");
+            }
+
+            // Form creation with javascript insetad of HTML Starts
+            const f = document.createElement("form");
+            f.setAttribute('method', "post");
+            f.setAttribute('action', "submit.php"); 
 
 
+            for(let x=0; x<elemObj.length; x++){
+                let typeValidated = typeValidation(elemObj[x]["type"]);
+                console.log(typeValidated);
+            
+                if (!typeValidated){
+                    alert("Field type not allowed!")
+                    return;
+                }
+                // console.log("elem object x", elemObj[x])
+                // validationProperty(elemObj[x])
+                let propertyValidated = validationProperty(Object.keys(elemObj[x]))
+                if (!propertyValidated){
+                    alert("Property type doesn't match!")
+                    return;
+                }
+                
+                // let y = document.createElement("input");
 
-   
+                let i = document.createElement("input");
+                // i=y;
+                i.setAttribute("type", elemObj[x]["type"]);
+                i.setAttribute("value", elemObj[x]["value"]);
+                i.setAttribute("placeholder", elemObj[x]["placeholder"]);
 
-</script>
+                f.appendChild(i);
+            }                    
+                
+
+            const s = document.createElement("input");
+            s.setAttribute('type', "submit");
+            s.setAttribute('value', "Submit");
+            f.appendChild(s);
+
+            document.body.appendChild(f);
+        }
+
+        submitForm(4,elemObj);
+
+
+    </script>
 
 
 
