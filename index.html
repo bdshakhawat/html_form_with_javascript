@@ -1,200 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            text-align: center;
-            
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="assets/cssFormValidation/form_validation.css">
+    </head>
+    <body >
+        <h2 class="form-header">HTML Form with javascript</h2>
         
-        h1{
-            color: blue;
-        }
-        form{
-            display: flex;
-            flex-direction: column;
-            width: 500px;
-            margin: 0 auto;
-        }
-        form input{
-            margin: 20px auto;
-        }
-    </style>
-</head>
-<body >
-    <h1>HTML Form with javascript</h1>
-    <!-- 
-        To create a form dynamically with JavaScript, we can use the document.createElement method to create the element.
-
-        Then we can use the setAttribute method to set the element attributes.
-
-        Then we can use the appendChild method to append the elements into the parent element.Finally append the <form> element to the <body> element of the document. This example creates a Registration form.
-
-        ** make it a reusable function
-        ** the function will accept 2 parameter
-            1. number ( the number of input element)
-            2. an object will be passed with element properties, like 
-            let elemObj = [
-                {
-                    "type": "text/email/password",
-                    "name": "dummy_text",
-                    "placeholder": "dummy_placeholder"
-                },
-                {
-                    "type": "text/email/password",
-                    "name": "dummy_text",
-                    "placeholder": "dummy_placeholder"
-                }
-            ]
-        
-        ** testFunction(3, elemObj)
-        ** 
-
-        // For this write a function named 
-
-
-
-      let  input = array["text", "email","password"] Value validation of type property
-      validation: out of these three types give alert ("input is not allowed")
-      let inputProperty=["type","value","placeholder"]
-      if these three property are not given then alert("Not accepted");
-
-      Note: To learn javascript as a beginner what are the obstacles and how to overcome it. Write 
-      your own experience.
-
-      *** Task: Make a function to validate the input types initially with creating
-      the input. (Before running the loop) (improved Type validation )
-      *** Property or Key Validation
-    -->
-    <scrip src="./helperFunc.js"></script>
-    
-
-    <script>
         
 
-        // helper function for input validation.
-        function typeValidation(inputType) {
-            // console.log("Function got input type: ",inputType)
-            // Standard list for comparison
-            let allowedTypeList = ["text", "email","password"]
-            // Set default value as false
+        
+        <!-- Form validation JS -->
+        <script src="./assets/js/FormValidation/helperFunc.js"></script>
+        <script src="./assets/js/FormValidation/FormValidation.js"></script>
 
-            let typeValidated = false;
-
-            // logic to compare with user input for validation
-            if (allowedTypeList.includes(inputType.toLowerCase())) {
-                typeValidated = true;
-            }
-            return typeValidated;            
-        }
-
-
-
-        function validationProperty(propertyObject){
-            let allowedPropertyList=["type","value","placeholder"],
-                propertyValidated = false;
-
-            // passedPropertylist = Object.keys(propertyObject);
-            // console.log(passedPropertylist)
-
-            propertyObject.forEach(elements => {
-                propertyValidated = allowedPropertyList.includes(elements)
-            })
-            return propertyValidated
-        }
-
-
-        let elemObj=[
-            {
-                type:"text",
-                value:"Full Name",
-                placeholder:"Put your Full Name Here"
-            },
-            
-            {
-                type:"email",
-                value:"Email",
-                placeholder:"Put your Email Here"
-            },
-            {
-                type:"text",
-                value:"Date of Birth",
-                placeholder:"Write your date of birth"
-            },
-            {
-                type:"password",
-                value:"password",
-                placeholder:"password"
-                
-
-            }
-        ]
-
-        function submitForm(number, elemObj){
-
-            // get the length of the object
-            let numbers = elemObj.length;
-            // check the number input 
-            if (number != numbers){
-                alert("Numbers are not matching with number");
-            }
-
-            // Form creation with javascript insetad of HTML Starts
-            const f = document.createElement("form");
-            f.setAttribute('method', "post");
-            f.setAttribute('action', "submit.php"); 
-
-
-            for(let x=0; x<elemObj.length; x++){
-                let typeValidated = typeValidation(elemObj[x]["type"]);
-                console.log(typeValidated);
-            
-                if (!typeValidated){
-                    alert("Field type not allowed!")
-                    return;
-                }
-                // console.log("elem object x", elemObj[x])
-                // validationProperty(elemObj[x])
-                let propertyValidated = validationProperty(Object.keys(elemObj[x]))
-                if (!propertyValidated){
-                    alert("Property type doesn't match!")
-                    return;
-                }
-                
-                // let y = document.createElement("input");
-
-                let i = document.createElement("input");
-                // i=y;
-                i.setAttribute("type", elemObj[x]["type"]);
-                i.setAttribute("value", elemObj[x]["value"]);
-                i.setAttribute("placeholder", elemObj[x]["placeholder"]);
-
-                f.appendChild(i);
-            }                    
-                
-
-            const s = document.createElement("input");
-            s.setAttribute('type', "submit");
-            s.setAttribute('value', "Submit");
-            f.appendChild(s);
-
-            document.body.appendChild(f);
-        }
-
-        submitForm(4,elemObj);
-
-
-    </script>
-
-
-
-
-
-   
+        <!-- Main JS -->
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
 
          
 
