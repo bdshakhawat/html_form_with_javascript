@@ -49,8 +49,9 @@ function createForm(elemObj){
         
         // Validation completed. Create a form object. 
         // It's a loop, so we will create the object for once.
-        x == 0 ? f = document.createElement("form") : null
-        f.setAttribute("class", "js-powered-form", "id","myForm")
+        x == 0 ? f = document.createElement("form") : null;
+        f.setAttribute("class", "js-powered-form")
+        // f.setAttribute('id', 'formdata');
 
         let i = document.createElement("input");
         i.setAttribute("class", "firstValue");
