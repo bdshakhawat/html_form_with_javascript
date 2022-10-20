@@ -1,3 +1,7 @@
+
+
+
+
 function createForm(elemObj){
 
     // ---------------------------------------- //
@@ -46,9 +50,10 @@ function createForm(elemObj){
         // Validation completed. Create a form object. 
         // It's a loop, so we will create the object for once.
         x == 0 ? f = document.createElement("form") : null
-        f.setAttribute("class", "js-powered-form")
+        f.setAttribute("class", "js-powered-form", "id","myForm")
 
         let i = document.createElement("input");
+        i.setAttribute("class", "firstValue");
         i.setAttribute("type", elemObj[x]["type"]);
         i.setAttribute("value", elemObj[x]["value"]);
         i.setAttribute("placeholder", elemObj[x]["placeholder"]);
@@ -64,4 +69,34 @@ function createForm(elemObj){
     f.appendChild(s);
 
     document.body.appendChild(f);
+
+
+    
+
+    // var y = document.getElementById('js-powered-form-ubmit');
+    //    y.addEventListener  ("click",Submit);
+    //     function Submit() {
+    //         var v = document.getElementById('firstValue').value;
+    //         if( v.length==0 ){
+    //         alert('Please enter value text.');
+    //         return;
+    //         }
+    //         var title = document.getElementById('form-header');
+    //         title.innerHTML = v;
+            
+    // } 
 }
+
+// var y = document.getElementById('js-powered-form-ubmit');
+// console.log(y)
+// y.addEventListener("click",Submit);
+// function Submit() {
+//     var v = document.getElementById('firstValue').value;
+//     if( v.length==0 ){
+//     alert('Please enter value text.');
+//     return;
+//     }
+//     var title = document.getElementById('form-header');
+//     title.innerHTML = v;
+    
+// } 

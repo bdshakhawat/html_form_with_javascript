@@ -27,11 +27,14 @@ function objectValidation(objectToValidate) {
     // Base case
     let typeValidated = false,
     propertyValidated = false;
+    
 
     for (i=0; i<objectToValidate.length; i++) {
         console.log(objectToValidate[i])
         propertyValidated = validationProperty(Object.keys(objectToValidate[i]))
         typeValidated = typeValidation(objectToValidate[i])
+        
+
         
         if (!propertyValidated || !typeValidated) {
             break
