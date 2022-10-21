@@ -39,3 +39,11 @@ your own experience.
 *** Task: Make a function to validate the input types initially with creating
 the input. (Before running the loop) (improved Type validation )
 *** Property or Key Validation
+**Task: Empty field validation
+****Empty form validation algorithm: i) Hold the submit button with document.getelementById ii) Then add 
+// add eventlistener to it iii) Now hold the form or input and take input data in a varible iv) wtite the
+// if logic to give atert.
+
+
+****Field specific alert
+

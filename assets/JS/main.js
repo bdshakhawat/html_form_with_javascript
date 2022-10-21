@@ -26,19 +26,20 @@ let elemObj=[
 // The form creation function
 createForm(elemObj);
 
+
     // Empty validation by holding Form
 
 var m = document.getElementById('js-powered-form-ubmit');
-console.log(m);
+// console.log(m);
 m.addEventListener("click",Submit);
 function Submit(){
     let d = document.getElementsByClassName("js-powered-form")[0];
-// console.log(d);
+    console.log(d);
     for(let i=0; i<d.length; i++){
-        console.log(d[i].value);
-        let formdata= d[i].value;
-        let n = formdata;
-        if(!n){
+        // console.log(d[i].value);
+        // let formdata= d[i].value;
+        // let n = d[i].value;
+        if(!d[i].value){
                 alert('Please Enter Valid Data');
                 return;
                 }
