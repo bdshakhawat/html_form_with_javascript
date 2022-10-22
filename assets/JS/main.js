@@ -27,27 +27,67 @@ let elemObj=[
 createForm(elemObj);
 
 
-    // Empty validation by holding Form
-
 var m = document.getElementById('js-powered-form-ubmit');
 // console.log(m);
 m.addEventListener("click",Submit);
 function Submit(){
     let d = document.getElementsByClassName("js-powered-form")[0];
-    console.log(d);
+    
     for(let i=0; i<d.length; i++){
-        // console.log(d[i].value);
         // let formdata= d[i].value;
+        // console.log(d[i].value);
+        // console.log(d[0].value);
+        
         // let n = d[i].value;
-        if(!d[i].value){
+        if(!d[0].value){
+            
                 alert('Please Enter Valid Data');
                 return;
+                }else if(!d[2].value){
+                    alert("Enter your Date of birth");
+                    return
+                }else if(!d[3].value){
+                    alert("Enter your password");
+                    return
                 }
+
         }
+        
         
        
         
         }
+
+// let m= document.forms.input.value;
+// console.log(m);
+
+// Add event
+
+
+
+    // Empty validation by holding Form
+
+// var m = document.getElementById('js-powered-form-ubmit');
+// // console.log(m);
+// m.addEventListener("click",Submit);
+// function Submit(){
+//     let d = document.getElementsByClassName("js-powered-form")[0];
+//     console.log(d);
+//     for(let i=0; i<d.length; i++){
+//         console.log(d[i].value);
+//         // let formdata= d[i].value;
+//         // let n = d[i].value;
+//         if(!d[i].value){
+//             setErrorMsg("")
+
+//                 // alert('Please Enter Valid Data');
+//                 return;
+//                 }
+//         }
+        
+       
+        
+//         }
     
 // Valid code for empty form valiation by holding input
 

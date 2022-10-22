@@ -55,7 +55,7 @@ function createForm(elemObj){
 
         let i = document.createElement("input");
         i.setAttribute("class", "firstValue");
-        i.setAttribute("type", elemObj[x]["type"]);
+        i.setAttribute("type", elemObj[x]["type"], );
         i.setAttribute("value", elemObj[x]["value"]);
         i.setAttribute("placeholder", elemObj[x]["placeholder"]);
 
