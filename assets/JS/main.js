@@ -34,14 +34,10 @@ function Submit(){
     let d = document.getElementsByClassName("js-powered-form")[0];
     
     for(let i=0; i<d.length; i++){
-        // let formdata= d[i].value;
-        // console.log(d[i].value);
-        // console.log(d[0].value);
         
-        // let n = d[i].value;
         if(!d[0].value){
             
-                alert('Please Enter Valid Data');
+                alert('Enter Full Name');
                 return;
                 }else if(!d[2].value){
                     alert("Enter your Date of birth");
