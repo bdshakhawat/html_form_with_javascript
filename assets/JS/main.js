@@ -1,11 +1,11 @@
 // Element object, that we will use in the function
 let elemObj=[
+    
     {
         type:"text",
         value:"Full Name",
         placeholder:"Put your Full Name Here"
     },
-    
     {
         type:"email",
         value:"Email",
@@ -26,33 +26,38 @@ let elemObj=[
 // The form creation function
 createForm(elemObj);
 
-
+// Firstly hold the submit button with document.getElementByID. Then add eventListener with submit button.Now declear a function
+// Submit and inside the function hold the form with document.getElementsByClassName(js-powered-form)[0] and keep it inside a
+// variable. Run a for loop on the form to collect form data. After getting the data of individual field valu apply if else
+// condition of individual input field and set an alert for them. 
 var m = document.getElementById('js-powered-form-ubmit');
 // console.log(m);
-m.addEventListener("click",Submit);
-function Submit(){
+m.addEventListener("click",Submit(e));
+function Submit(e){
+    e.preventDefault();
     let d = document.getElementsByClassName("js-powered-form")[0];
     
     for(let i=0; i<d.length; i++){
         
-        if(!d[0].value){
-            
-                alert('Enter Full Name');
-                return;
-                }else if(!d[2].value){
-                    alert("Enter your Date of birth");
-                    return
-                }else if(!d[3].value){
-                    alert("Enter your password");
-                    return
-                }
+        console.log(d[0].value, d[0].type)
 
+        if(!d[0].type){ 
+            alert('Enter Full Name');
+            return;
+        }else if(!d[0].type){
+            alert("Enter your Date of birth");
+            return
+        }else if(!d[0].type){
+            alert("Enter your password");
+            return
         }
+
+    }
         
         
        
         
-        }
+}
 
 // let m= document.forms.input.value;
 // console.log(m);
