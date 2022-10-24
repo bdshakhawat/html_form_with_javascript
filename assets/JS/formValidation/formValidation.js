@@ -1,8 +1,8 @@
 
 
 
-
-function createForm(elemObj){
+function createForm(clsName, elemObj){
+    // console.log(clsName);
 
     // ---------------------------------------- //
     // ---------VALIDATION WAY 3--------------- //
@@ -54,12 +54,17 @@ function createForm(elemObj){
         // f.setAttribute('id', 'formdata');
 
         let i = document.createElement("input");
-        i.setAttribute("class", "firstValue");
-        i.setAttribute("type", elemObj[x]["type"], );
-        i.setAttribute("value", elemObj[x]["value"]);
-        i.setAttribute("placeholder", elemObj[x]["placeholder"]);
+        // i.setAttribute("class", "firstValue");
+        i.setAttribute("type", elemObj[x]["type"],"id","text" );
+        i.setAttribute("value", elemObj[x]["value"], "id","email");
+        i.setAttribute("placeholder", elemObj[x]["placeholder"],"id","place");
 
         f.appendChild(i);
+        // let form = document.getElementsByClassName("js-form");
+        // form.appendChild(f);
+        // f.appendChild("js-form");
+
+
     }                    
         
 
@@ -70,6 +75,9 @@ function createForm(elemObj){
     f.appendChild(s);
 
     document.body.appendChild(f);
+    var form = document.getElementsByClassName('js-form');
+    form.innerHTML = f;
+    // document.getElementsByClassName("js-form").appendChild(f);
 
 
     

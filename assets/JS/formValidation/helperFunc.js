@@ -1,7 +1,7 @@
 // helper function for input type validation.
 function typeValidation(inputObject) {
     // Base type list
-    let allowedTypeList = ["text", "email","password"];
+    let allowedTypeList = ["text", "email","password","date"];
 
     // logic to compare with user provided input type for validation
     return allowedTypeList.includes(inputObject["type"])
